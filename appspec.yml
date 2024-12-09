@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /app.py
+    destination: /home/ec2-user/
+  - source: /requirements.txt
+    destination: /home/ec2-user/
+hooks:
+  AfterInstall:
+    - location: buildspec.yml
+      timeout: 300
+      runas: root
